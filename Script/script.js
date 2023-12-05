@@ -45,10 +45,9 @@ fetch('http://localhost:3000/robots')
                     <div class="text">
                         <h5>${robot.name}</h5>
                         <p>${robot.description}</p>
-                        <button>VIEW Details</button>
+                        <a href="../details.html?id=${robot.id}"><button onclick="deleteData(${robot.id})"> VIEW DETAILS</button></a>
                     </div>
                 </div>
             `
-            
         });
     });
