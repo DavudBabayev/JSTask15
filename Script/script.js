@@ -12,6 +12,8 @@ window.addEventListener("scroll", () => {
     }
 });
 
+
+
 const menu = document.querySelector(".modal-menu");
 document.querySelector("#click").addEventListener('click', (event) => {
     event.preventDefault();
@@ -35,35 +37,18 @@ document.addEventListener('click', (event) => {
 fetch('http://localhost:3000/robots')
     .then(res => res.json())
     .then(data => {
-        const robotCardsContainer = document.querySelector('.sec22');
-
+        
         data.forEach(robot => {
-            const card = document.createElement('div');
-            card.classList.add('card');
-
-            const imgDiv = document.createElement('div');
-            imgDiv.classList.add('img');
-            const img = document.createElement('img');
-            img.src = robot.image;
-            img.alt = '';
-            imgDiv.appendChild(img);
-
-            const textDiv = document.createElement('div');
-            textDiv.classList.add('text');
-            const h5 = document.createElement('h5');
-            h5.textContent = robot.name;
-            const p = document.createElement('p');
-            p.textContent = robot.description;
-            const button = document.createElement('button');
-            button.textContent = 'VIEW Details';
-
-            textDiv.appendChild(h5);
-            textDiv.appendChild(p);
-            textDiv.appendChild(button);
-
-            card.appendChild(imgDiv);
-            card.appendChild(textDiv);
-
-            robotCardsContainer.appendChild(card);
+            document.querySelector('.sec22').innerHTML += `
+            <div class="card">
+                    <div class="img"><img src="${robot.image}" alt=""></div>
+                    <div class="text">
+                        <h5>${robot.name}</h5>
+                        <p>${robot.description}</p>
+                        <button>VIEW Details</button>
+                    </div>
+                </div>
+            `
+            
         });
-    })
+    });
