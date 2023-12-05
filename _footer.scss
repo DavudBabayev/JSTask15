@@ -1,0 +1,167 @@
+footer {
+    background-image: url('https://preview.colorlib.com/theme/robotics/img/footer-bg.jpg.webp');
+    width: 100%;
+    padding: 120px 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .footcon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+
+        .fcon1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            color: white;
+            flex-wrap: wrap;
+
+            .child1 {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+                font-weight: 100;
+
+                h3 {
+
+                    font-size: 20px;
+                }
+
+                ul {
+                    font-size: 16px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                }
+            }
+
+            .child2 {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+                font-weight: 100;
+
+                h2 {
+
+                    font-size: 20px;
+                }
+
+                .input {
+                    display: flex;
+                    gap: 10px;
+
+                    input {
+                        border-radius: 25px;
+                        padding: 15px 90px 15px 15px;
+                        outline: none;
+                        transition: all 1s ease;
+                        border: none;
+                        background-color: #f8f8f8;
+
+                        &:focus {
+                            border: 2px solid;
+                        }
+                    }
+
+                    button {
+                        width: 40%;
+                        color: #f8f8f8;
+                        padding: 13px 25px;
+                        border: none;
+                        font-weight: 600;
+                        border-radius: 25px;
+                        transition: all 0.5s ease;
+                        background-image: -webkit-linear-gradient(0deg, #828fff 0%, #d496ff 100%);
+
+                        &:hover {
+                            background: white;
+                            color: #222;
+                        }
+                    }
+                }
+            }
+
+            .child3 {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+
+                .grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 10px;
+                }
+            }
+
+        }
+
+        .fcon2 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            a {
+                font-size: 15px;
+                color: white;
+                width: 50%;
+            }
+
+            span,
+            i {
+                color: #828fff;
+            }
+
+            .menu-icon {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                font-size: 15px;
+
+                width: 45%;
+                gap: 20px;
+
+                i {
+                    background-color: #222;
+                    padding: 10px;
+                    color: white;
+
+                    &:hover {
+                        background-image: -webkit-linear-gradient(0deg, #828fff 0%, #d496ff 100%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:991px) {
+
+    footer {
+        .footcon {
+            .fcon1{
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 50px;
+                .input{
+                    width: 100%;
+                    flex-direction: column;
+                }
+            }
+            .fcon2 {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }
+}
