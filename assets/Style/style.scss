@@ -35,3 +35,20 @@ ul{
 @import 'section7';
 @import 'footer';
 @import 'modal';
+
+
+.addplus{
+    width: 50px;
+    height: 50px;
+    font-size: 44px;
+    border-radius: 99999px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    text-decoration: none;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}

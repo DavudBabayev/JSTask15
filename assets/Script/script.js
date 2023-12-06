@@ -15,6 +15,10 @@ window.addEventListener("scroll", () => {
 
 
 const menu = document.querySelector(".modal-menu");
+function hideMenu() {
+    menu.style.display = "none";
+    document.querySelector(".modal-bg").style.display = "none";
+}
 document.querySelector("#click").addEventListener('click', (event) => {
     event.preventDefault();
     menu.style.display = "block";
@@ -28,6 +32,11 @@ document.addEventListener('click', (event) => {
     if (!menu.contains(event.target) && event.target !== document.querySelector("#click")) {
         menu.style.display = "none";
         document.querySelector(".modal-bg").style.display = "none";
+    }
+});
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024) {
+        hideMenu();
     }
 });
 
@@ -46,8 +55,14 @@ fetch('http://localhost:3000/robots')
                         <h5>${robot.name}</h5>
                         <p>${robot.description}</p>
                         <a href="../details.html?id=${robot.id}"><button onclick="deleteData(${robot.id})"> VIEW DETAILS</button></a>
+                        <button onclick="deleteRobot(${robot.id})">Delete</button>
                     </div>
                 </div>
             `
         });
     });
+
+    function deleteRobot(id){
+        axios.delete(`http://localhost:3000/robots/${id}`);
+        window.location.reload();
+    }
