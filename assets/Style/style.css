@@ -364,8 +364,9 @@ nav .navcon .menu .drop:hover .drop-menu {
   text-align: start;
 }
 .section4 .sec4con .sec41 a {
-  color: navy;
+  color: lightseagreen;
   font-size: 15px;
+  text-decoration: none;
 }
 .section4 .sec4con .sec41 h2 {
   font-size: 40px;

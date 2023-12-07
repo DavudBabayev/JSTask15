@@ -56,6 +56,7 @@ fetch('http://localhost:3000/robots')
                         <p>${robot.description}</p>
                         <a href="../details.html?id=${robot.id}"><button onclick="deleteData(${robot.id})"> VIEW DETAILS</button></a>
                         <button onclick="deleteRobot(${robot.id})">Delete</button>
+                        <button onclick="updateRobot">Update</button>
                     </div>
                 </div>
             `
