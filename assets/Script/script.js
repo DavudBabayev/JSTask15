@@ -42,13 +42,14 @@ window.addEventListener('resize', () => {
 
 
 ///////FETCH///////
+let page = 4
+function showData() {
+    fetch('http://localhost:3000/robots')
+        .then(res => res.json())
+        .then(data => {
 
-fetch('http://localhost:3000/robots')
-    .then(res => res.json())
-    .then(data => {
-        
-        data.forEach(robot => {
-            document.querySelector('.sec22').innerHTML += `
+            data.slice(page - 4, page).forEach(robot => {
+                document.querySelector('.sec22').innerHTML += `
             <div class="card">
                     <div class="img"><img src="${robot.image}" alt=""></div>
                     <div class="text">
@@ -56,14 +57,60 @@ fetch('http://localhost:3000/robots')
                         <p>${robot.description}</p>
                         <a href="../details.html?id=${robot.id}"><button onclick="deleteData(${robot.id})"> VIEW DETAILS</button></a>
                         <button onclick="deleteRobot(${robot.id})">Delete</button>
-                        <button onclick="updateRobot">Update</button>
+                        <button onclick="edit(${robot.id})">Update</button>
                     </div>
                 </div>
             `
+            });
         });
-    });
 
-    function deleteRobot(id){
-        axios.delete(`http://localhost:3000/robots/${id}`);
-        window.location.reload();
-    }
+};
+
+showData()
+
+document.querySelector(".loadBtn").addEventListener("click", () => {
+    page += 4;
+    showData();
+    event.target.style.display = "none";
+});
+
+function deleteRobot(id) {
+    axios.delete(`http://localhost:3000/robots/${id}`);
+    window.location.reload();
+};
+
+
+
+///////////FORM-UPDATE//////////
+
+const form = document.querySelector("form");
+const closeFormButton = document.querySelector(".closeform");
+const imgInp = document.querySelector(".image-input")
+const formName = document.querySelector(".nameform")
+const formCat = document.querySelector(".catform")
+
+function edit(id) {
+    form.style.display = "flex";
+    closeFormButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        form.style.display = "none";
+    });
+    form.addEventListener("submit", function (event) {
+        event.preventDefault()
+
+        axios.get(`http://localhost:3000/robots/${id}`)
+        let src = imgInp.files[0]
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            const obj = {
+                name: formName.value,
+                description: formCat.value,
+                image: e.target.result
+            }
+            console.log(obj);
+            axios.patch(`http://localhost:3000/robots/${id}`, obj)
+        }
+        reader.readAsDataURL(src);
+    });
+}

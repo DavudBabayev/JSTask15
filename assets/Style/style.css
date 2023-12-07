@@ -249,6 +249,14 @@ nav .navcon .menu .drop:hover .drop-menu {
   color: white;
   background-image: -webkit-linear-gradient(0deg, #828fff 0%, #d496ff 100%);
 }
+.section2 .sec2con .loadBtn {
+  width: 150px;
+  height: 30px;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
 
 @media screen and (max-width: 1023px) {
   .section2 {
@@ -813,6 +821,58 @@ footer .footcon .fcon2 .menu-icon i:hover {
   right: 25px;
   top: 25px;
   color: white;
+}
+
+form {
+  width: 400px;
+  height: 40vh;
+  padding: 0 20px;
+  background-color: rgb(245, 245, 245);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  position: fixed;
+  z-index: 1000;
+  left: 37.5%;
+  top: 30vh;
+  border-radius: 25px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  color: white;
+  background-color: #00563f;
+}
+form img {
+  border-radius: 9999999px;
+  width: 120px;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+form p {
+  position: relative;
+  right: -340px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+form h4,
+form h3 {
+  font-weight: 400;
+}
+form .txt {
+  width: 100%;
+  height: 25px;
+  padding-left: 5px;
+}
+form .sbmt {
+  width: 100%;
+  height: 35px;
+  background-color: blue;
+  color: white;
+  border: none;
 }
 
 .addplus {
