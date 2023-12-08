@@ -1,4 +1,5 @@
 const nav = document.querySelector("nav");
+const up = document.querySelector('.yuxari')
 
 window.addEventListener("scroll", () => {
 
@@ -114,3 +115,26 @@ function edit(id) {
         reader.readAsDataURL(src);
     });
 }
+
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+        document.querySelector(".yuxari").style.display = "flex";
+        document.querySelector(".addplus").style.bottom = "75px";
+    }
+    else {
+        document.querySelector(".yuxari").style.display = "none";
+        document.querySelector(".addplus").style.bottom = "10px";
+    }
+})
+
+
+up.onclick = () =>{
+    window.scroll({
+        top: 0,
+        behavior: 'smooth'
+    })
+}
+
+
+

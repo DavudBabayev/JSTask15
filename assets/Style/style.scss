@@ -7,6 +7,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 .container{
@@ -52,4 +53,14 @@ ul{
     justify-content: center;
     align-items: center;
     color: white;
+}
+
+.yuxari{
+    color: #fff;
+    background: blue;
+    font-size: 50px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 99999px;
 }

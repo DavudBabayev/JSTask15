@@ -7,6 +7,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -842,7 +843,7 @@ form {
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   color: white;
-  background-color: #00563f;
+  background-image: -webkit-linear-gradient(0deg, #828fff 0%, #d496ff 100%);
 }
 form img {
   border-radius: 9999999px;
@@ -889,4 +890,14 @@ form .sbmt {
   justify-content: center;
   align-items: center;
   color: white;
+}
+
+.yuxari {
+  color: #fff;
+  background: blue;
+  font-size: 50px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 99999px;
 }/*# sourceMappingURL=style.css.map */
